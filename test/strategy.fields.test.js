@@ -44,7 +44,7 @@ describe('Strategy', function() {
   });
 
   describe('handling a request with valid credentials in body using custom field name with object notation', function() {
-    var strategy = new Strategy({ tokenFields: 'user[token]' }, function(token, done) {
+    var strategy = new Strategy({ tokenFields: ['user[token]'] }, function(token, done) {
       if (token == 'abcdefghijklmnopqrstuvwxyz') {
         return done(null, { id: '1234' }, { scope: 'read' });
       }
