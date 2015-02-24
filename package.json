@@ -1,0 +1,48 @@
+{
+  "name": "passport-auth-token",
+  "version": "1.0.0",
+  "description": "Authentication token strategy for Passport.",
+  "keywords": [
+    "passport",
+    "local",
+    "auth",
+    "authn",
+    "authentication",
+    "token"
+  ],
+  "author": "Mike Bell <mbell8903@yahoo.com>",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/mbell8903/passport-auth-token.git"
+  },
+  "bugs": {
+    "url": "http://github.com/mbell8903/passport-auth-token/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://www.opensource.org/licenses/MIT"
+    }
+  ],
+  "main": "./lib",
+  "dependencies": {
+    "passport-strategy": "1.x.x"
+  },
+  "devDependencies": {
+    "chai": "^2.1.0",
+    "chai-passport-strategy": "0.1.x",
+    "mocha": "^2.1.0"
+  },
+  "engines": {
+    "node": ">= 0.4.0"
+  },
+  "scripts": {
+    "test": "mocha --reporter spec --require test/bootstrap/node test/*.test.js"
+  },
+  "homepage": "https://github.com/mbell8903/passport-auth-token",
+  "directories": {
+    "example": "examples",
+    "test": "test"
+  },
+  "license": "MIT"
+}
