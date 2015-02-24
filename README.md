@@ -4,7 +4,6 @@
 [![Coverage Status](https://coveralls.io/repos/mbell8903/passport-auth-token/badge.png)](https://coveralls.io/r/mbell8903/passport-auth-token)
 [![Quality](https://codeclimate.com/github/mbell8903/passport-auth-token.png)](https://codeclimate.com/github/mbell8903/passport-auth-token)
 [![Dependencies](https://david-dm.org/mbell8903/passport-auth-token.png)](https://david-dm.org/mbell8903/passport-auth-token)
-[![Tips](http://img.shields.io/gittip/mbell8903.png)](https://www.gittip.com/mbell8903/)
 
 
 [Passport](http://passportjs.org/) strategy for authenticating with an authentication token.
