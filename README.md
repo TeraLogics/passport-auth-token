@@ -85,10 +85,6 @@ application:
 
 You can also set the parameter `optional` to true, so the same call can be both authenticated and not authenticated.
 
-## Examples
-
-For complete, working examples, refer to the multiple [examples](https://github.com/jaredhanson/passport-token/tree/master/examples) included. (NOT UPDATED)
-
 ## Tests
 
     $ npm install
