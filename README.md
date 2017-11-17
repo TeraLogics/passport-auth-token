@@ -85,6 +85,16 @@ application:
 
 You can also set the parameter `optional` to true, so the same call can be both authenticated and not authenticated.
 
+## Configuration Options
+
+Name | Type | Description
+`tokenFields` | `Array<String>` | An array of field names where the token is found, defaults to `[token]`
+`headerFields` | `Array<String>` | An array of field names where the token is found, defaults to `[]`
+`passReqToCallback` | `Boolean` | When `true`, `req` is the first argument to the verify callback (default: `false`)
+`params` | `Boolean` | When `true` the request params are also included in the lookup
+`optional` | `Boolean` | When `true` the token is optional and the strategy does't return an error
+`caseInsensitive` | `Boolean` | When `true` the token is check is case insensitive
+
 ## Tests
 
     $ npm install
