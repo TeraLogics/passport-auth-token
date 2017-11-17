@@ -87,7 +87,7 @@ You can also set the parameter `optional` to true, so the same call can be both 
 
 ## Configuration Options
 
-####`tokenFields` Array<String> ####
+#### `tokenFields` Array<String> ####
 An array of field names where the token is found, defaults to `[token]`
 
 #### `headerFields` Array<String> ####
