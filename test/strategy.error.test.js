@@ -1,15 +1,14 @@
-/* global describe, it, expect, before */
+'use strict';
 
-var Strategy = require('../lib/strategy');
+const Strategy = require('../lib/strategy');
 
 describe('Strategy', function () {
-
 	describe('encountering an error during verification', function () {
-		var strategy = new Strategy(function (token, done) {
+		const strategy = new Strategy(function (token, done) {
 			done(new Error('something went wrong'));
 		});
 
-		var err;
+		let err;
 
 		before(function (done) {
 			chai.passport.use(strategy)
@@ -31,11 +30,11 @@ describe('Strategy', function () {
 	});
 
 	describe('encountering an exception during verification', function () {
-		var strategy = new Strategy(function (token, done) {
+		const strategy = new Strategy(function (token, done) {
 			throw new Error('something went horribly wrong');
 		});
 
-		var err;
+		let err;
 
 		before(function (done) {
 			chai.passport.use(strategy)
@@ -55,5 +54,4 @@ describe('Strategy', function () {
 			expect(err.message).to.equal('something went horribly wrong');
 		});
 	});
-
 });

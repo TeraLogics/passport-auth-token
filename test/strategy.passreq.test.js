@@ -1,12 +1,10 @@
-/* global describe, it, expect, before */
-/* jshint expr: true */
+'use strict';
 
-var Strategy = require('../lib/strategy');
+const Strategy = require('../lib/strategy');
 
 describe('Strategy', function () {
-
 	describe('passing request to verify callback', function () {
-		var strategy = new Strategy({
+		const strategy = new Strategy({
 			passReqToCallback: true
 		}, function (req, token, done) {
 			if (token === 'abcdefghijklmnopqrstuvwxyz') {
@@ -21,8 +19,8 @@ describe('Strategy', function () {
 			return done(null, false);
 		});
 
-		var user
-			, info;
+		let user,
+			info;
 
 		before(function (done) {
 			chai.passport.use(strategy)
@@ -54,5 +52,4 @@ describe('Strategy', function () {
 			expect(info.foo).to.equal('hello');
 		});
 	});
-
 });

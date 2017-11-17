@@ -1,10 +1,9 @@
-/* global describe, it, expect */
+'use strict';
 
-var Strategy = require('../lib/strategy');
+const Strategy = require('../lib/strategy');
 
 describe('Strategy', function () {
-
-	var strategy = new Strategy(function () { });
+	const strategy = new Strategy(function () { });
 
 	it('should be named authtoken', function () {
 		expect(strategy.name).to.equal('authtoken');
@@ -12,8 +11,7 @@ describe('Strategy', function () {
 
 	it('should throw if constructed without a verify callback', function () {
 		expect(function () {
-			var s = new Strategy();
+			const s = new Strategy();
 		}).to.throw(TypeError, 'AuthTokenStrategy requires a verify callback');
 	});
-
 });

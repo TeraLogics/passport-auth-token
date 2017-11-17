@@ -1,16 +1,14 @@
-/* global describe, it, expect, before */
-/* jshint expr: true */
+'use strict';
 
-var Strategy = require('../lib/strategy');
+const Strategy = require('../lib/strategy');
 
 describe('Strategy', function () {
-
 	describe('failing authentication', function () {
-		var strategy = new Strategy(function (token, done) {
+		const strategy = new Strategy(function (token, done) {
 			return done(null, false);
 		});
 
-		var info;
+		let info;
 
 		before(function (done) {
 			chai.passport.use(strategy)
@@ -31,11 +29,11 @@ describe('Strategy', function () {
 	});
 
 	describe('failing authentication with info', function () {
-		var strategy = new Strategy(function (token, done) {
+		const strategy = new Strategy(function (token, done) {
 			return done(null, false, { message: 'authentication failed' });
 		});
 
-		var info;
+		let info;
 
 		before(function (done) {
 			chai.passport.use(strategy)
@@ -55,5 +53,4 @@ describe('Strategy', function () {
 			expect(info.message).to.equal('authentication failed');
 		});
 	});
-
 });

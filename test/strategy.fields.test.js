@@ -1,12 +1,10 @@
-/* global describe, it, expect, before */
-/* jshint expr: true */
+'use strict';
 
-var Strategy = require('../lib/strategy');
+const Strategy = require('../lib/strategy');
 
 describe('Strategy', function () {
-
 	describe('handling a request with valid credentials in body using custom field name', function () {
-		var strategy = new Strategy({ tokenFields: ['tok'] }, function (token, done) {
+		const strategy = new Strategy({ tokenFields: ['tok'] }, function (token, done) {
 			if (token === 'abcdefghijklmnopqrstuvwxyz') {
 				return done(null, {
 					id: '1234'
@@ -18,7 +16,7 @@ describe('Strategy', function () {
 			return done(null, false);
 		});
 
-		var user,
+		let user,
 			info;
 
 		before(function (done) {
@@ -47,7 +45,7 @@ describe('Strategy', function () {
 	});
 
 	describe('handling a request with valid credentials in body using custom field name with object notation', function () {
-		var strategy = new Strategy({ tokenFields: ['user[token]'] }, function (token, done) {
+		const strategy = new Strategy({ tokenFields: ['user[token]'] }, function (token, done) {
 			if (token === 'abcdefghijklmnopqrstuvwxyz') {
 				return done(null, {
 					id: '1234'
@@ -59,7 +57,7 @@ describe('Strategy', function () {
 			return done(null, false);
 		});
 
-		var user,
+		let user,
 			info;
 
 		before(function (done) {
@@ -87,5 +85,4 @@ describe('Strategy', function () {
 			expect(info.scope).to.equal('read');
 		});
 	});
-
 });
